@@ -1,0 +1,64 @@
+#root {
+  /* max-width: 1280px; */
+  /* margin: 0 auto; */
+  /* padding: 2rem; */
+  /* text-align: center; */
+}
+
+/* .App {
+  font-family: sans-serif;
+  text-align: center;
+} */
+
+/* .profile-pic {
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+} */
+
+.movie-container{ 
+  width: 320px;
+  /* background-color: crimson; */
+  
+}
+
+
+.movie-poster{
+
+  height: 500px;
+  width: 320px;
+
+}
+
+.movie-specs{
+  display: flex;
+  justify-content: space-between
+}
+
+body {
+  margin: 24px;
+  
+}
+
+.movie-summary{
+  font-size: 21px;
+  font-weight: 400;
+  text-align: justify;
+}
+
+.movie-list{
+
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-evenly
+
+}
+
+
+.counter{
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+
