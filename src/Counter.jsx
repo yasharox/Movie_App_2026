@@ -1,5 +1,7 @@
 import { useState } from "react";
 import IconButton from '@mui/material/IconButton';
+import Badge from '@mui/material/Badge';
+
 
  function Counter () {
 
@@ -13,11 +15,22 @@ import IconButton from '@mui/material/IconButton';
 
     <div className='counter'>
 
-      {/* <button onClick={ incrementLike}> 👍🏻 <span> {like}</span></button> */}
-       <IconButton aria-label="like" size="small" onClick={ incrementLike}>    👍🏻{like}   </IconButton>
-       <IconButton aria-label="like" size="small" onClick={ incrementDisLike}> 👎🏻{dislike}   </IconButton>
-      {/* <button onClick={ incrementDisLike}> 👎🏻   <span> {dislike}</span></button> */}
-      
+       
+        
+        <IconButton aria-label="like"  onClick={ incrementLike} color="primary" >
+            <Badge badgeContent={like} color="primary">
+                👍🏻 
+            </Badge>          
+        </IconButton>
+  
+
+       
+       <IconButton aria-label="Dislike"  onClick={ incrementDisLike} color="primary" > 
+        <Badge badgeContent={dislike} color="error">  👎🏻 </Badge>
+        </IconButton>
+       
+
+
     </div>
   )  
 }

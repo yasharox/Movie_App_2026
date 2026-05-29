@@ -6,8 +6,8 @@ return (
 
     <section className='movie-list'>
 
-      {data.map (({name, image, rating, summary})=>( 
-        <Movie  name = {name} poster = {image} rating={rating} summary={summary} />) )}
+      {data.map (({name, image, rating, summary}, index)=>( 
+        <Movie  name = {name} poster = {image} rating={rating} summary={summary} index= {index}/>) )}
 
      </section>
 ) 

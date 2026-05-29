@@ -1,5 +1,5 @@
-const data = [ // object destructuring  
-    {
+export const InitialMovies = [
+  {
       name: "The Avengers",
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyNMKEWfouZ-LL6Un6IRmBbgHsno01MQsW0Q&s",
@@ -43,9 +43,4 @@ const data = [ // object destructuring
       summary:"The Expendables is an American ensemble action thriller franchise conceived by David Callaham, spanning a film series, the first three movies were cowritten by Sylvester Stallone, and additional media",
       trailer:"https://www.youtube.com/embed/4xD0junWlFc"
     },
-    
-   
-   
-  ];
-
-  export default data ;
+];
