@@ -78,10 +78,18 @@ function App() {
 export default App;
 
 
+//50   mins done 
+
 
 // local crud  is done
 
 // create - done Add Movie
 // Read   - done MovieList, MovieDetails
 // Update - EditMovie - combination of AddMovie & MovieDetails
-// Delete - done
+// Delete - d one
+
+// so far learned hooks
+ // usestate
+ // useHistory- route dom
+ // useparams- route dom
+ // useContext - to control prop drilling
