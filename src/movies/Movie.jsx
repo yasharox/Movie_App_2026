@@ -11,7 +11,7 @@ import CardActions from '@mui/material/CardActions';
 import InfoIcon from '@mui/icons-material/Info';
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
   
-  function Movie ({ name, poster, summary, rating,trailer, index, deleteButton}) {
+  function Movie ({ name, poster, summary, rating,trailer, index, deleteButton, editButton}) {
 
     const [ show, setShow] = useState(true);
 
@@ -51,7 +51,8 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
       <CardActions>
             <Counter/>  
-            {deleteButton}          
+            {deleteButton}   
+            {editButton}       
       </CardActions>
       
     </CardContent>

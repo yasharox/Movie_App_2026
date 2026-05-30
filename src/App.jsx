@@ -10,6 +10,7 @@ import MovieDetails from './movies/MovieDetails';
 import { NotFound } from './others/NotFound';
 import { Welcome } from './others/Welcome';
 import { AddMovie } from './movies/AddMovie';
+import { EditMovie } from './movies/EditMovie';
 
 
 
@@ -42,6 +43,10 @@ function App() {
           <Route path="/movies/add-movie">
             <AddMovie data={data} setData = {setData} />
           </Route>
+           <Route path="/movies/edit/:id">            
+            <EditMovie data={data} setData={setData}/>
+          </Route>
+
           <Route path="/movies/:id">
             < MovieDetails data={data} />
           </Route>
@@ -63,8 +68,6 @@ function App() {
 
         </Switch>
 
-
-
       </div>
     </>
   );
@@ -75,4 +78,10 @@ function App() {
 export default App;
 
 
-// 2:18 till done
+
+// local crud  is done
+
+// create - done Add Movie
+// Read   - done MovieList, MovieDetails
+// Update - EditMovie - combination of AddMovie & MovieDetails
+// Delete - done
