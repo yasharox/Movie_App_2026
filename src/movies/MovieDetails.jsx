@@ -27,7 +27,7 @@ function MovieDetails({ data }) {
       <div className='movie-detail-container'>
         <div className='movie-specs'>
           <h3 className='movie-name'> {movie.name}</h3>
-          <p className='movie-rating'> {movie.rating}</p>
+          <p className='movie-rating'>{movie.rating}</p>
         </div>
 
         <p className='movie-summary'> {movie.summary}</p>
@@ -35,7 +35,7 @@ function MovieDetails({ data }) {
         <Button onClick={()=>history.goBack()} 
         variant="contained"  
         color="primary" 
-        startIcon={<KeyboardBackspaceIcon/>}
+        startIcon={<KeyboardBackspaceIcon/> }
         >Back</Button>
 
       </div >
