@@ -19,6 +19,7 @@
 .movie-container{ 
   width: 360px;
   /* background-color: crimson; */
+  height: min-content;
   
 }
 
