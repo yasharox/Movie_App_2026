@@ -50,9 +50,10 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
     <p style = { styles} className='movie-summary'> {summary}</p>
 
       <CardActions>
-            <Counter/>  
+            <Counter/>
+            {editButton}   
             {deleteButton}   
-            {editButton}       
+                  
       </CardActions>
       
     </CardContent>

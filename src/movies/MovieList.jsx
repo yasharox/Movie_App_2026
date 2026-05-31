@@ -24,8 +24,26 @@ return (
       {data.map (({name, image, rating, summary}, index)=>( 
         <Movie  name = {name} poster = {image} rating={rating} summary={summary} index= {index}
         
+
+         editButton = {  
+        <IconButton 
+         style = {{marginLeft: "auto"}}
+        aria-label="edit"   color='success'  size="large" 
+          onClick={() => {history.push('/movies/edit/' + index)}}    // edit  movie logic with  is simple
+        >
+        <EditIcon />
+        
+       </IconButton>     
+      
+      }
+
+
+
         deleteButton = {  
-        <IconButton aria-label="delete"   color='error'  size="large"
+
+        <IconButton       
+        
+        aria-label="delete"   color='error'  size="large"
           onClick={() => { removeMovie(index) }}    // remove movie logic with filter is simple
         >
         <DeleteIcon />
@@ -34,15 +52,7 @@ return (
       
       }
 
-        editButton = {  
-        <IconButton aria-label="edit"   color='success'  size="large" 
-          onClick={() => {history.push('/movies/edit/' + index)}}    // edit  movie logic with  is simple
-        >
-        <EditIcon />
-        
-       </IconButton>     
-      
-      }
+       
 
       
 

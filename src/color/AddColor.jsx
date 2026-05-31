@@ -9,7 +9,7 @@ export function AddColor() {
   const [colors, setColors] = useState(["pink", "orange", "crimson"]);
 
   return (
-    <div>
+    <div className='AddColor'>
 
       <input
 
