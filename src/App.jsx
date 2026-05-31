@@ -213,10 +213,13 @@ function App() {
                     color="inherit"
                     sx={{ mr: 3, fontWeight: 500 }}
                     onClick={changeMode}
+                    startIcon={
+                      mode === "light" ? <DarkModeIcon /> : <LightModeIcon />
+                    }
                   >
-                    {/* { mode === "light" ? "dark" : "light"}  */}
+                    {mode === "light" ? "dark" : "light"}
 
-                    {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
+                    {/* {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />} */}
                   </Button>
                 </Toolbar>
               </AppBar>
@@ -261,7 +264,7 @@ function App() {
 
 export default App;
 
-//26   mins done
+//41   mins done
 
 // local crud  is done
 
