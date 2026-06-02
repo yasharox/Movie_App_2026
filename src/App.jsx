@@ -135,22 +135,32 @@ function App() {
                       <MenuIcon />
                     </IconButton>
 
-                    <Typography
-                      variant="h6"
-                      noWrap
+                    <Box
                       sx={{
                         position: "absolute",
                         left: "50%",
                         transform: "translateX(-50%)",
-                        fontFamily: "monospace",
-                        fontWeight: 700,
-                        letterSpacing: ".3rem",
+                        display: "flex",
+                        alignItems: "center",
                         color: "inherit",
-                        textDecoration: "none",
                       }}
                     >
-                      MOVIESX
-                    </Typography>
+                      <AdbIcon sx={{ mr: 1 }} />
+
+                      <Typography
+                        variant="h6"
+                        noWrap
+                        sx={{
+                          fontFamily: "monospace",
+                          fontWeight: 700,
+                          letterSpacing: ".3rem",
+                          color: "inherit",
+                          textDecoration: "none",
+                        }}
+                      >
+                        MOVIESX
+                      </Typography>
+                    </Box>
 
                     {/* Dropdown Menu Container */}
                     <Menu
