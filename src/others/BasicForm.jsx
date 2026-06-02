@@ -6,6 +6,12 @@ import { useFormik } from "formik";
 const formValidation = (values) => {
   const errors = {};
   console.log("formValidation", values);
+  // for email
+  if (values.email.length < 5) {
+    errors.password = "please enter long email";
+  }
+
+  // for password
   if (values.password.length < 8) {
     errors.password = "please enter long password";
   }
