@@ -152,7 +152,7 @@ function App() {
                       </MenuItem>
                       <MenuItem
                         sx={{ py: 1.5, fontSize: "0.95rem" }}
-                        onClick={() => handleNavigation("/color-game")}
+                        onClick={() => handleNavigation("/basic-Form")}
                       >
                         Baic Form
                       </MenuItem>
@@ -191,7 +191,7 @@ function App() {
                     <Button
                       color="inherit"
                       sx={{ mr: 3, fontWeight: 500 }}
-                      onClick={() => handleNavigation("/color-game")}
+                      onClick={() => handleNavigation("/basic-Form")}
                     >
                       Basic Form
                     </Button>
