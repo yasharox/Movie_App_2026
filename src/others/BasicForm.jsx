@@ -45,9 +45,12 @@ export function BasicForm() {
             type="email"
             value={formik.values.email}
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             fullWidth
           />
-          {formik.errors.email}
+          {formik.errors.email && formik.touched.email
+            ? formik.errors.email
+            : ""}
 
           <TextField
             id="password"
@@ -57,9 +60,13 @@ export function BasicForm() {
             type="password"
             value={formik.values.password}
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             fullWidth
           />
-          {formik.errors.password}
+
+          {formik.errors.password && formik.touched.password
+            ? formik.errors.password
+            : ""}
 
           <Button type="submit" variant="contained" size="large">
             Submit Form
