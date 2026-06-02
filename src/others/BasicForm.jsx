@@ -25,10 +25,11 @@ const formValidation = (values) => {
 
 export function BasicForm() {
   const formik = useFormik({
-    initialValues: { email: "yash@", password: "" },
+    initialValues: { email: "", password: "" },
     validate: formValidation,
-    onSubmit: (values) => {
+    onSubmit: (values, { resetForm }) => {
       console.log("onSubmit", values);
+      resetForm();
     },
   });
   return (
