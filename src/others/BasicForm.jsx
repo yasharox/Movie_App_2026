@@ -8,12 +8,16 @@ const formValidation = (values) => {
   console.log("formValidation", values);
   // for email
   if (values.email.length < 5) {
-    errors.password = "please enter long email";
+    errors.email = "please enter longer email";
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+    errors.email = "Invalid email address";
   }
 
   // for password
   if (values.password.length < 8) {
     errors.password = "please enter long password";
+  } else if (values.password.length > 12) {
+    errors.password = "please enter shorter password";
   }
 
   return errors;
