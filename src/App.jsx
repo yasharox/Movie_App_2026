@@ -154,7 +154,7 @@ function App() {
                         sx={{ py: 1.5, fontSize: "0.95rem" }}
                         onClick={() => handleNavigation("/color-game")}
                       >
-                        Color Game
+                        Baic Form
                       </MenuItem>
                     </Menu>
                   </Box>
@@ -233,7 +233,7 @@ function App() {
                 <MovieList />
               </Route>
 
-              <Route path="/color-game">
+              <Route path="/basic-Form">
                 {/* <AddColor /> */}
                 <BasicForm />
               </Route>
