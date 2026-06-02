@@ -203,7 +203,7 @@ function App() {
                         sx={{ py: 1.5, fontSize: "0.95rem" }}
                         onClick={() => handleNavigation("/basic-Form")}
                       >
-                        Baic Form
+                        Basic Form
                       </MenuItem>
                     </Menu>
                   </Box>
