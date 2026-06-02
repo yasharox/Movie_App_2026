@@ -26,7 +26,7 @@ const formValidation = (values) => {
 export function BasicForm() {
   const { handleSubmit, values, handleChange, handleBlur, touched, errors } =
     useFormik({
-      initialValues: { email: "@gmail.com", password: "" },
+      initialValues: { email: "", password: "" },
       validate: formValidation,
       onSubmit: (values, { resetForm }) => {
         console.log("onSubmit", values);
