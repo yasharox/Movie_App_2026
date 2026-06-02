@@ -302,7 +302,7 @@ function App() {
 
 export default App;
 
-//  2:20   mins done == validation - formik to be continued
+//  17   mins done == validation - formik to be continued
 // local crud  is done
 // create - done Add Movie
 // Read   - done MovieList, MovieDetails

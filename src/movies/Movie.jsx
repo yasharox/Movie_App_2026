@@ -51,7 +51,7 @@ function Movie({
               <InfoIcon />
             </IconButton>
           </h3>
-          <p className="movie-rating"> {rating}</p>
+          <p className="movie-rating"> ⭐{rating}</p>
         </div>
 
         {/*  conditional rendering  */}
