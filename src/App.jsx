@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import MovieList from "./movies/MovieList";
 import TextField from "@mui/material/TextField";
@@ -7,11 +7,10 @@ import {
   Switch,
   Route,
   Redirect,
-  useParams,
   useHistory,
 } from "react-router-dom/cjs/react-router-dom.min";
 import { AddColor } from "./color/AddColor";
-import { InitialMovies } from "./InitialMovies";
+// import { InitialMovies } from "./InitialMovies";
 import { MovieDetails } from "./movies/MovieDetails";
 import { NotFound } from "./others/NotFound";
 import { Welcome } from "./others/Welcome";
@@ -36,11 +35,20 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
+import { BasicForm } from "./others/BasicForm";
 
 function App() {
-  const [data, setData] = useState(InitialMovies);
-  const history = useHistory();
+  const [data, setData] = useState([]);
 
+  useEffect(() => {
+    fetch("https://6a1bf1008858a003817b5635.mockapi.io/movies", {
+      method: "GET",
+    })
+      .then((data) => data.json())
+      .then((movies) => setData(movies));
+  }, []);
+
+  const history = useHistory();
   const [mode, setMode] = useState("dark");
 
   // creating context
@@ -81,26 +89,6 @@ function App() {
       <ThemeProvider theme={Theme}>
         <Paper elevation={4} style={paperStyles}>
           <div className="App">
-            {/* <Box sx={{ flexGrow: 1 }}>
-          <AppBar position="static" >
-            <Toolbar>
-              <Button  color="inherit" aria-label="Home"   sx={{ mr: 2 }} onClick={()=>history.push("/")}  >
-               Home                                 
-              </Button>
-              <Button  color="inherit" aria-label="Home"   sx={{ mr: 2 }} onClick={()=>history.push("/movies")}  >
-               Movies           
-              </Button>
-              <Button  color="inherit" aria-label="Home"   sx={{ mr: 2 }} onClick={()=>history.push("/movies/add-movie")} >
-               Add Movies  
-              </Button>
-              <Button  color="inherit" aria-label="Home"   sx={{ mr: 2 }} onClick={()=>history.push("/color-game")}  >
-               Color Game   
-              </Button>              
-              
-            </Toolbar>
-          </AppBar>
-       </Box> */}
-
             <Box sx={{ flexGrow: 1 }}>
               <AppBar position="static">
                 <Toolbar sx={{ justifyContent: "space-between" }}>
@@ -205,7 +193,7 @@ function App() {
                       sx={{ mr: 3, fontWeight: 500 }}
                       onClick={() => handleNavigation("/color-game")}
                     >
-                      Color Game
+                      Basic Form
                     </Button>
                   </Box>
 
@@ -231,22 +219,23 @@ function App() {
                 <Redirect to="/movies"> </Redirect>
               </Route>
               <Route path="/movies/add-movie">
-                <AddMovie data={data} setData={setData} />
+                <AddMovie />
               </Route>
               <Route path="/movies/edit/:id">
-                <EditMovie data={data} setData={setData} />
+                <EditMovie />
               </Route>
 
               <Route path="/movies/:id">
-                <MovieDetails data={data} />
+                <MovieDetails />
               </Route>
 
               <Route path="/movies">
-                <MovieList data={data} setData={setData} />
+                <MovieList />
               </Route>
 
               <Route path="/color-game">
-                <AddColor />
+                {/* <AddColor /> */}
+                <BasicForm />
               </Route>
               <Route exact path="/">
                 <Welcome />
@@ -264,20 +253,18 @@ function App() {
 
 export default App;
 
-//41   mins done
-
+//  1:41  mins done == validation - formik to be continued
 // local crud  is done
-
 // create - done Add Movie
 // Read   - done MovieList, MovieDetails
 // Update - EditMovie - combination of AddMovie & MovieDetails
 // Delete - d one
-
 // so far learned hooks
-// usestate
+// usestate -react
 // useHistory- route dom
 // useparams- route dom
 // useContext - to control prop drilling
 // 1) createing - createContext
 // 2) publisher - provider-  context.provider
 // 3) subscriber - useContext(context)
+// useEffect - from react

@@ -95,3 +95,24 @@ body {
 .AddColor{
   margin: 10px;
 }
+
+
+.formContainer {
+  min-height:80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.formContainer-page {
+  width: 100%;
+  max-width: 60%;
+  padding: 30px;
+}
+
+.formContainer-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

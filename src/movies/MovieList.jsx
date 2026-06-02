@@ -1,66 +1,78 @@
-import Movie from './Movie.jsx';
-import data from '../Data.js';
-import IconButton from '@mui/material/IconButton';
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min.js';
+import Movie from "./Movie.jsx";
+// import data from "../Data.js";
+import IconButton from "@mui/material/IconButton";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min.js";
+import { useEffect, useState } from "react";
 
-function MovieList ({data, setData}) {
-
+function MovieList() {
   const history = useHistory();
 
-  const removeMovie = (index)=>{ // remove movie logic with filter is simple
-     const removeMovieIndex = index;          
-     const remainingMovies = data.filter( (mv, idx) => idx != removeMovieIndex);
+  const [movie, setMovie] = useState([]);
 
-     console.log( data, remainingMovies, index);
-     // and update it
-     setData(remainingMovies);
+  const getMovies = () => {
+    fetch(`https://6a1bf1008858a003817b5635.mockapi.io/movies/`, {
+      method: "GET",
+    })
+      .then((data) => data.json())
+      .then((mvs) => setMovie(mvs));
   };
-return (
 
-    <section className='movie-list'>
+  useEffect(getMovies, []);
 
-      {data.map (({name, image, rating, summary}, index)=>( 
-        <Movie  name = {name} poster = {image} rating={rating} summary={summary} index= {index}
-        
+  const removeMovie = (id) => {
+    console.log("Deleting Movie", id);
+    // remove movie logic with filter is simple
+    // const removeMovieIndex = index;
+    // const remainingMovies = movie.filter((mv, idx) => idx != removeMovieIndex);
+    // console.log(movie, remainingMovies, index);
+    // // and update it
+    // setMovie(remainingMovies);
+    // after deleting you have to refresh
+    fetch(`https://6a1bf1008858a003817b5635.mockapi.io/movies/${id}`, {
+      method: "DELETE",
+    }).then(() => getMovies());
+  };
 
-         editButton = {  
-        <IconButton 
-         style = {{marginLeft: "auto"}}
-        aria-label="edit"   color='success'  size="large" 
-          onClick={() => {history.push('/movies/edit/' + index)}}    // edit  movie logic with  is simple
-        >
-        <EditIcon />
-        
-       </IconButton>     
-      
-      }
-
-
-
-        deleteButton = {  
-
-        <IconButton       
-        
-        aria-label="delete"   color='error'  size="large"
-          onClick={() => { removeMovie(index) }}    // remove movie logic with filter is simple
-        >
-        <DeleteIcon />
-        
-       </IconButton>     
-      
-      }
-
-       
-
-      
-
-       
-        />) )}
-
-     </section>
-) 
+  return (
+    <section className="movie-list">
+      {movie.map(({ name, image, rating, summary, id }) => (
+        <Movie
+          name={name}
+          poster={image}
+          rating={rating}
+          summary={summary}
+          id={id}
+          editButton={
+            <IconButton
+              style={{ marginLeft: "auto" }}
+              aria-label="edit"
+              color="success"
+              size="large"
+              onClick={() => {
+                history.push("/movies/edit/" + id);
+              }} // edit  movie logic with  is simple
+            >
+              <EditIcon />
+            </IconButton>
+          }
+          deleteButton={
+            <IconButton
+              aria-label="delete"
+              color="error"
+              size="large"
+              onClick={() => {
+                removeMovie(id);
+              }} // remove movie logic with filter is simple
+            >
+              <DeleteIcon />
+            </IconButton>
+          }
+        />
+      ))}
+    </section>
+  );
 }
 
 export default MovieList;

@@ -1,5 +1,6 @@
-const data = [ // object destructuring  
+const data = [ 
     {
+      id:'100',
       name: "The Avengers",
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyNMKEWfouZ-LL6Un6IRmBbgHsno01MQsW0Q&s",
@@ -9,6 +10,7 @@ const data = [ // object destructuring
       
     },
     {
+      id:'101',
       name: "Avatar: Fire and Ash",
       image:
         "https://upload.wikimedia.org/wikipedia/en/9/95/Avatar_Fire_and_Ash_poster.jpeg",
@@ -18,6 +20,7 @@ const data = [ // object destructuring
       
     },
       {
+      id:'102',
       name: "Jack Reacher",
       image:
         "https://m.media-amazon.com/images/I/91apNSEB2zL._AC_UF1000,1000_QL80_.jpg",
@@ -28,6 +31,7 @@ const data = [ // object destructuring
     },
 
     {
+      id:'103',
       name: "Gravity",
       image:
         "https://upload.wikimedia.org/wikipedia/en/f/f6/Gravity_Poster.jpg",
@@ -36,6 +40,7 @@ const data = [ // object destructuring
       trailer:"https://www.youtube.com/embed/OiTiKOy59o4",
     },
     {
+      id:'104',
       name: "The Expendables",
       image:
         "https://m.media-amazon.com/images/I/51y42RNdW7L._AC_UF1000,1000_QL80_.jpg",
