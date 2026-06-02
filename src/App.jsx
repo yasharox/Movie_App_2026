@@ -29,6 +29,7 @@ import {
   MenuItem,
   Typography,
 } from "@mui/material";
+import AdbIcon from "@mui/icons-material/Adb";
 
 // Material UI Icon Component (Separated to fix execution crash)
 import MenuIcon from "@mui/icons-material/Menu";
@@ -93,10 +94,31 @@ function App() {
               <AppBar position="static">
                 <Toolbar sx={{ justifyContent: "space-between" }}>
                   {/* --- 1. MOBILE LAYOUT: HAMBURGER & DROPDOWN MENU --- */}
+                  <AdbIcon
+                    sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+                  />
+                  <Typography
+                    variant="h6"
+                    noWrap
+                    component="a"
+                    href="#app-bar-with-responsive-menu"
+                    sx={{
+                      mr: 2,
+                      display: { xs: "none", md: "flex" },
+                      fontFamily: "monospace",
+                      fontWeight: 700,
+                      letterSpacing: ".3rem",
+                      color: "inherit",
+                      textDecoration: "none",
+                    }}
+                  >
+                    MOVIESX
+                  </Typography>
                   <Box
                     sx={{
                       display: { xs: "flex", md: "none" },
                       alignItems: "center",
+                      justifyContent: "space-between",
                       width: "100%",
                     }}
                   >
@@ -112,6 +134,23 @@ function App() {
                     >
                       <MenuIcon />
                     </IconButton>
+
+                    <Typography
+                      variant="h6"
+                      noWrap
+                      sx={{
+                        position: "absolute",
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                        fontFamily: "monospace",
+                        fontWeight: 700,
+                        letterSpacing: ".3rem",
+                        color: "inherit",
+                        textDecoration: "none",
+                      }}
+                    >
+                      MOVIESX
+                    </Typography>
 
                     {/* Dropdown Menu Container */}
                     <Menu
@@ -253,7 +292,7 @@ function App() {
 
 export default App;
 
-//  1:41  mins done == validation - formik to be continued
+//  1:53  mins done == validation - formik to be continued
 // local crud  is done
 // create - done Add Movie
 // Read   - done MovieList, MovieDetails
