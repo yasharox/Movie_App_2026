@@ -24,34 +24,33 @@ const formValidation = (values) => {
 };
 
 export function BasicForm() {
-  const formik = useFormik({
-    initialValues: { email: "", password: "" },
-    validate: formValidation,
-    onSubmit: (values, { resetForm }) => {
-      console.log("onSubmit", values);
-      resetForm();
-    },
-  });
+  const { handleSubmit, values, handleChange, handleBlur, touched, errors } =
+    useFormik({
+      initialValues: { email: "@gmail.com", password: "" },
+      validate: formValidation,
+      onSubmit: (values, { resetForm }) => {
+        console.log("onSubmit", values);
+        resetForm();
+      },
+    });
   return (
     <div className="formContainer">
       <div className="formContainer-page">
         <h1>Formik Welcomes You !!</h1>
 
-        <form onSubmit={formik.handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <TextField
             id="email"
             name="email"
             label="Email"
             variant="outlined"
             type="email"
-            value={formik.values.email}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+            value={values.email}
+            onChange={handleChange}
+            onBlur={handleBlur}
             fullWidth
           />
-          {formik.errors.email && formik.touched.email
-            ? formik.errors.email
-            : ""}
+          {errors.email && touched.email ? errors.email : ""}
 
           <TextField
             id="password"
@@ -59,15 +58,13 @@ export function BasicForm() {
             label="Password"
             variant="outlined"
             type="password"
-            value={formik.values.password}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+            value={values.password}
+            onChange={handleChange}
+            onBlur={handleBlur}
             fullWidth
           />
 
-          {formik.errors.password && formik.touched.password
-            ? formik.errors.password
-            : ""}
+          {errors.password && touched.password ? errors.password : ""}
 
           <Button type="submit" variant="contained" size="large">
             Submit Form
