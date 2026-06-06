@@ -18,6 +18,7 @@ import { AddMovie } from "./movies/AddMovie";
 import { EditMovie } from "./movies/EditMovie";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
+import { API } from "/global";
 
 import {
   Box,
@@ -42,7 +43,7 @@ function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("https://6a1bf1008858a003817b5635.mockapi.io/movies", {
+    fetch(`${API}/movies`, {
       method: "GET",
     })
       .then((data) => data.json())
@@ -301,19 +302,3 @@ function App() {
 }
 
 export default App;
-
-//  17   mins done == validation - formik to be continued
-// local crud  is done
-// create - done Add Movie
-// Read   - done MovieList, MovieDetails
-// Update - EditMovie - combination of AddMovie & MovieDetails
-// Delete - d one
-// so far learned hooks
-// usestate -react
-// useHistory- route dom
-// useparams- route dom
-// useContext - to control prop drilling
-// 1) createing - createContext
-// 2) publisher - provider-  context.provider
-// 3) subscriber - useContext(context)
-// useEffect - from react

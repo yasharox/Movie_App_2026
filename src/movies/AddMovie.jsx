@@ -2,6 +2,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { API } from "/global";
 
 export function AddMovie() {
   const [name, setName] = useState("");
@@ -16,7 +17,7 @@ export function AddMovie() {
     const newMovie = { name, image, summary, rating, trailer };
 
     // 1)Method : post >> 2) body- data & json >> 3) header - json data
-    fetch("https://6a1bf1008858a003817b5635.mockapi.io/movies", {
+    fetch(`${API}/movies`, {
       method: "POST",
       body: JSON.stringify(newMovie),
       headers: { "Content-type": "application/json" },

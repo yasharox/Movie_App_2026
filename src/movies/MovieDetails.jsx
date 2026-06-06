@@ -6,6 +6,7 @@ import {
 import Button from "@mui/material/Button";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import { useEffect, useState } from "react";
+import { API } from "/global";
 
 export function MovieDetails() {
   const history = useHistory();
@@ -19,7 +20,7 @@ export function MovieDetails() {
   const [movie, setMovie] = useState({});
 
   useEffect(() => {
-    fetch(`https://6a1bf1008858a003817b5635.mockapi.io/movies/${id}`, {
+    fetch(`${API}/movies/${id}`, {
       method: "GET",
     })
       .then((data) => data.json())

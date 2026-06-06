@@ -13,6 +13,8 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Button from "@mui/material/Button";
 
+import { API } from "/global";
+
 function MovieList() {
   const history = useHistory();
 
@@ -22,7 +24,7 @@ function MovieList() {
   const [selectedMovieId, setSelectedMovieId] = useState(null);
 
   const getMovies = () => {
-    fetch(`https://6a1bf1008858a003817b5635.mockapi.io/movies/`, {
+    fetch(`${API}/movies/`, {
       method: "GET",
     })
       .then((data) => data.json())
@@ -40,7 +42,7 @@ function MovieList() {
   //   // // and update it
   //   // setMovie(remainingMovies);
   //   // after deleting you have to refresh
-  //   fetch(`https://6a1bf1008858a003817b5635.mockapi.io/movies/${id}`, {
+  //   fetch(`${API}/movies/${id}`, {
   //     method: "DELETE",
   //   }).then(() => getMovies());
   // };
@@ -56,12 +58,9 @@ function MovieList() {
   };
 
   const handleConfirmDelete = () => {
-    fetch(
-      `https://6a1bf1008858a003817b5635.mockapi.io/movies/${selectedMovieId}`,
-      {
-        method: "DELETE",
-      },
-    ).then(() => {
+    fetch(`${API}/movies/${selectedMovieId}`, {
+      method: "DELETE",
+    }).then(() => {
       getMovies();
       handleClose();
     });

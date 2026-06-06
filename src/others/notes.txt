@@ -1,0 +1,34 @@
+
+// 2:30    mins done == reducer to be continued
+// local crud  is done
+// create - done Add Movie
+// Read   - done MovieList, MovieDetails
+// Update - EditMovie - combination of AddMovie & MovieDetails
+// Delete - d one
+// so far learned hooks
+
+// usestate -react
+// useHistory- route dom
+// useparams- route dom
+// useContext - to control prop drilling
+// 1) createing - createContext
+// 2) publisher - provider-  context.provider
+// 3) subscriber - useContext(context)
+// useEffect - from react
+
+// from the first
+// {} - template interpolation
+// component - starts with capital leter -> retuns jsx
+// key - used to virtual dom & real dom -> update ( reconsilation)
+// performance boost - 10 k times updat on virtual dom - 1 impact on real dom
+// usestate ( hook) -react
+// destructuriing object
+// conditional styling , rendering - two ways to sisplay and hide data
+// use context + usereducer - to be learnt
+
+// node 
+-> not only a server its one of the use case
+-> node is place where you can run js
+-> no dom in node.js, no -> console.log( document), no -> window
+
+// npm init >> npm i express

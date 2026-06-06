@@ -1,5 +1,6 @@
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import { API } from "/global";
 
 import {
   useHistory,
@@ -18,7 +19,7 @@ export function EditMovie() {
   const [movie, setMovie] = useState(null); // to do conditional rendering  set here null
 
   useEffect(() => {
-    fetch(`https://6a1bf1008858a003817b5635.mockapi.io/movies/${id}`, {
+    fetch(`${API}/movies/${id}`, {
       method: "GET",
     })
       .then((data) => data.json())
@@ -48,7 +49,7 @@ function UpdateMovie({ movie }) {
     // create copy of the movies and add replace the edited movies to it
 
     // 1)Method : put >> 2) body- data & json >> 3) header - json data
-    fetch(`https://6a1bf1008858a003817b5635.mockapi.io/movies/${movie.id}`, {
+    fetch(`${API}/movies/${movie.id}`, {
       method: "PUT",
       body: JSON.stringify(updateMovie),
       headers: { "Content-type": "application/json" },
