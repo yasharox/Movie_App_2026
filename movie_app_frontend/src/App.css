@@ -1,0 +1,118 @@
+#root {
+  /* max-width: 1280px; */
+  /* margin: 0 auto; */
+  /* padding: 2rem; */
+  /* text-align: center; */
+}
+
+/* .App {
+  font-family: sans-serif;
+  text-align: center;
+} */
+
+/* .profile-pic {
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+} */
+
+.movie-container{ 
+  width: 360px;
+  /* background-color: crimson; */
+  height: min-content;
+  
+}
+
+
+.movie-poster{
+
+  height: 500px;
+  width: 360px;
+
+}
+
+.movie-specs{
+  display: flex;
+  justify-content: space-between
+}
+
+body {
+  margin: 0px;
+  
+}
+
+.movie-summary{
+  font-size: 21px;
+  font-weight: 400;
+  text-align: justify;
+}
+
+.movie-list{
+
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 10px;
+
+}
+
+
+.counter{
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+
+.add-movie-form{
+  display:flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 24px ;
+  justify-content: space-between;
+}
+
+.movie-detail-container{
+  padding: 5px;
+}
+
+.welcome {
+  height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2rem ;
+  font-size: clamp(1.0rem, 4vw, 2rem);
+  width: 100vw;
+
+ 
+  
+}
+
+
+
+.AddColor{
+  margin: 10px;
+}
+
+
+.formContainer {
+  min-height:80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.formContainer-page {
+  width: 100%;
+  max-width: 70%;
+  padding: 30px;
+}
+
+.formContainer-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
