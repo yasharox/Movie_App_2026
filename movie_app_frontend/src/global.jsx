@@ -3,5 +3,3 @@
 // https://fsd-may-2026.onrender.com/
 
 export const API = "https://fsd-may-2026.onrender.com";
-
-
