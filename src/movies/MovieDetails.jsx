@@ -34,16 +34,16 @@ export function MovieDetails() {
         height="780"
         src={movie.trailer}
         title="The Expendables 3 Official Trailer #1 (2014) - Sylvester Stallone Movie HD"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
       ></iframe>
 
       <div className="movie-detail-container">
         <div className="movie-specs">
           <h3 className="movie-name"> {movie.name}</h3>
-          <p className="movie-rating">{movie.rating}</p>
+          <p className="movie-rating">⭐{movie.rating}</p>
         </div>
 
         <p className="movie-summary"> {movie.summary}</p>

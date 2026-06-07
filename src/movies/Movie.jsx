@@ -16,6 +16,7 @@ function Movie({
   poster,
   summary,
   rating,
+  language,
   // trailer,
   id,
   deleteButton,

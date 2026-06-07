@@ -15,11 +15,12 @@ export function AddMovie() {
   const addMovie = () => {
     // copy of the movies and add new movies to it
     const newMovie = { name, image, summary, rating, trailer };
+    console.log(newMovie);
 
     // 1)Method : post >> 2) body- data & json >> 3) header - json data
     fetch(`${API}/movies`, {
       method: "POST",
-      body: JSON.stringify([newMovie]),
+      body: JSON.stringify(newMovie),
       headers: { "Content-type": "application/json" },
     }) //returns a promise
       .then(() => history.push("/movies"));

@@ -172,7 +172,7 @@ function App() {
                       transformOrigin={{ vertical: "top", horizontal: "left" }}
                       open={Boolean(anchorElNav)}
                       onClose={handleCloseNavMenu}
-                      PaperProps={{
+                      paperprops={{
                         sx: {
                           bgcolor: "#1e1e1e", // Matches the dark dropdown aesthetic
                           color: "white",
