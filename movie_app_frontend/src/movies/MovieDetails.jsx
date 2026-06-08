@@ -6,7 +6,7 @@ import {
 import Button from "@mui/material/Button";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import { useEffect, useState } from "react";
-import { API } from "/global";
+import { API } from "../global";
 
 export function MovieDetails() {
   const history = useHistory();

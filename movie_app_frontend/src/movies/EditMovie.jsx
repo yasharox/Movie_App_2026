@@ -1,6 +1,6 @@
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { API } from "/global";
+import { API } from "../global";
 
 import {
   useHistory,
@@ -49,7 +49,7 @@ function UpdateMovie({ movie }) {
     // create copy of the movies and add replace the edited movies to it
 
     // 1)Method : put >> 2) body- data & json >> 3) header - json data
-    fetch(`${API}/movies/${movie.id}`, {
+    fetch(`${API}/movies/${movie.id || movie._id}`, {
       method: "PUT",
       body: JSON.stringify(updateMovie),
       headers: { "Content-type": "application/json" },

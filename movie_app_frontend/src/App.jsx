@@ -18,7 +18,7 @@ import { AddMovie } from "./movies/AddMovie";
 import { EditMovie } from "./movies/EditMovie";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
-import { API } from "/global";
+import { API } from "./global";
 
 import {
   Box,

@@ -13,7 +13,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Button from "@mui/material/Button";
 
-import { API } from "/global";
+import { API } from "../global";
 
 function MovieList() {
   const history = useHistory();
@@ -33,8 +33,8 @@ function MovieList() {
 
   useEffect(getMovies, []);
 
-  const handleDeleteClick = (id) => {
-    setSelectedMovieId(id);
+  const handleDeleteClick = (id, _id) => {
+    setSelectedMovieId(id || _id);
     setOpen(true);
   };
 
@@ -54,14 +54,14 @@ function MovieList() {
 
   return (
     <section className="movie-list">
-      {movie.map(({ name, image, rating, summary, id }) => (
+      {movie.map((mv) => (
         <Movie
-          key={id}
-          name={name}
-          poster={image}
-          rating={rating}
-          summary={summary}
-          id={id}
+          key={mv._id}
+          id={mv.id || mv._id}
+          name={mv.name}
+          poster={mv.image}
+          rating={mv.rating}
+          summary={mv.summary}
           editButton={
             <IconButton
               style={{ marginLeft: "auto" }}
@@ -69,7 +69,7 @@ function MovieList() {
               color="success"
               size="large"
               onClick={() => {
-                history.push("/movies/edit/" + id);
+                history.push("/movies/edit/" + (mv.id || mv._id));
               }} // edit  movie logic with  is simple
             >
               <EditIcon />
@@ -85,7 +85,7 @@ function MovieList() {
               // }} // remove movie logic with filter is simple
 
               onClick={() => {
-                handleDeleteClick(id);
+                handleDeleteClick(mv.id || mv._id);
               }}
             >
               <DeleteIcon />

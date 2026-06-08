@@ -2,7 +2,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { API } from "/global";
+import { API } from "../global";
 
 export function AddMovie() {
   const [name, setName] = useState("");
