@@ -10,7 +10,7 @@ import {
   useHistory,
 } from "react-router-dom/cjs/react-router-dom.min";
 import { AddColor } from "./color/AddColor";
-// import { InitialMovies } from "./InitialMovies";
+
 import { MovieDetails } from "./movies/MovieDetails";
 import { NotFound } from "./others/NotFound";
 import { Welcome } from "./others/Welcome";
